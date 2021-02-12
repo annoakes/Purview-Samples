@@ -1,0 +1,229 @@
+{
+    "parameters": {
+        "searchRequest": {
+            "keywords": "copyfile.csv",
+            "filter": {
+                "and": [
+                    {
+                        "not": {
+                            "or": [
+                                {
+                                    "attributeName": "size",
+                                    "operator": "eq",
+                                    "attributeValue": 0
+                                },
+                                {
+                                    "attributeName": "fileSize",
+                                    "operator": "eq",
+                                    "attributeValue": 0
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "not": {
+                            "classification": "MICROSOFT.SYSTEM.TEMP_FILE"
+                        }
+                    },
+                    {
+                        "not": {
+                            "or": [
+                                {
+                                    "entityType": "AtlasGlossaryTerm"
+                                },
+                                {
+                                    "entityType": "AtlasGlossary"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "limit": 2,
+            "offset": 0,
+            "facets": [
+                {
+                    "facet": "assetType",
+                    "count": 0,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "classification",
+                    "count": 10,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "contactId",
+                    "count": 10,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "label",
+                    "count": 10,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "term",
+                    "count": 10,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "classificationCategory",
+                    "count": 0,
+                    "sort": {
+                        "count": "desc"
+                    }
+                },
+                {
+                    "facet": "fileExtension",
+                    "count": 0,
+                    "sort": {
+                        "count": "desc"
+                    }
+                }
+            ]
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "@search.count": 198,
+                "@search.facets": {
+                    "@search.count": 5,
+                    "@search.facets": {
+                        "classification": [
+                            {
+                                "count": 1,
+                                "value": "MICROSOFT.GOVERNMENT.US.PASSPORT_NUMBER"
+                            }
+                        ],
+                        "fileExtension": [
+                            {
+                                "count": 5,
+                                "value": "csv"
+                            }
+                        ],
+                        "assetType": [
+                            {
+                                "count": 2,
+                                "value": "Azure Blob Storage"
+                            },
+                            {
+                                "count": 2,
+                                "value": "Azure Data Lake Storage Gen1"
+                            },
+                            {
+                                "count": 1,
+                                "value": "Azure Data Lake Storage Gen2"
+                            }
+                        ],
+                        "classificationCategory": [
+                            {
+                                "count": 1,
+                                "value": "GOVERNMENT"
+                            }
+                        ],
+                        "label": [
+                            {
+                                "count": 5,
+                                "value": "Microsoft.Label.9FBDE396_1A24_4C79_8EDF_9254A0F35055"
+                            }
+                        ],
+                        "contactId": [
+                            {
+                                "count": 1,
+                                "value": "8a597ffc-6993-4772-ac25-86b7251e1234"
+                            }
+                        ],
+                        "term": [
+                            {
+                                "count": 1,
+                                "value": "Test Term"
+                            }
+                        ]
+                    },
+                    "value": [
+                        {
+                            "@search.score": 39.34531,
+                            "@search.highlights": {
+                                "qualifiedName": [
+                                    "adl://adcgen1account.azuredatalakestore.net/testcopybehavior/<em>copyfile.csv</em>"
+                                ],
+                                "name": [
+                                    "<em>copyfile.csv</em>"
+                                ]
+                            },
+                            "id": "535d2040-a751-43ff-bfb0-f51dc852af00",
+                            "qualifiedName": "adl://adcgen1account.azuredatalakestore.net/testcopybehavior/copyfile.csv",
+                            "name": "copyfile.csv",
+                            "description": null,
+                            "owner": null,
+                            "entityType": "azure_datalake_gen1_path",
+                            "classification": [],
+                            "label": [
+                                "Microsoft.Label.9FBDE396_1A24_4C79_8EDF_9254A0F35055"
+                            ],
+                            "assetType": [
+                                "Azure Data Lake Storage Gen1"
+                            ],
+                            "term": [],
+                            "contact": [{"id": "8a597ffc-6993-4772-ac25-86b7251e1234", "info": "Expert for this entity", "contactType": "Expert"}],
+                            "@search.text": "<em>copyfile.csv</em>"
+                        },
+                        {
+                            "@search.score": 35.688244,
+                            "@search.highlights": {
+                                "qualifiedName": [
+                                    "https://adctestgen2account.dfs.core.windows.net/adcresource/testcopybehavior/<em>copyfile.csv</em>"
+                                ],
+                                "name": [
+                                    "<em>copyfile.csv</em>"
+                                ]
+                            },
+                            "id": "032d4d36-1b03-4482-b144-071bf9199a79",
+                            "qualifiedName": "https://adctestgen2account.dfs.core.windows.net/adcresource/testcopybehavior/copyfile.csv",
+                            "name": "copyfile.csv",
+                            "description": null,
+                            "owner": "$superuser",
+                            "entityType": "azure_datalake_gen2_path",
+                            "classification": [],
+                            "label": [
+                                "Microsoft.Label.9FBDE396_1A24_4C79_8EDF_9254A0F35055"
+                            ],
+                            "assetType": [
+                                "Azure Data Lake Storage Gen2"
+                            ],
+                            "term": [],
+                            "contact": [],
+                            "@search.text": "<em>copyfile.csv</em>"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

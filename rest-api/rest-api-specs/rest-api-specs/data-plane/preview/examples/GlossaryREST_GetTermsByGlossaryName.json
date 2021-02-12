@@ -1,0 +1,61 @@
+{
+    "parameters": {
+        "glossaryName": "Glossary",
+        "limit": "10",
+        "offset": "0"
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": [
+                {
+                    "qualifiedName": "Term2@Glossary",
+                    "name": "Term2",
+                    "createTime": 1606287312495,
+                    "updateTime": 1606287312495,
+                    "shortDescription": "shortDescription2",
+                    "longDescription": null,
+                    "templateName": [],
+                    "guid": "952c7ba4-4c89-42d8-a05a-7d2161be7008",
+                    "status": "Approved"
+                },
+                {
+                    "qualifiedName": "Term1@Glossary",
+                    "name": "Term1",
+                    "createTime": 1606287247276,
+                    "updateTime": 1606290587593,
+                    "shortDescription": "shortDescription1",
+                    "longDescription": "long desc after partial update",
+                    "templateName": [],
+                    "guid": "54688d39-b298-4104-9e80-f2a16f44aaea",
+                    "contacts": {
+                        "Expert": [
+                            {
+                                "id": "30435ff9-9b96-44af-a5a9-e05c8b1ae2df"
+                            }
+                        ],
+                        "Steward": [
+                            {
+                                "id": "30435ff9-9b96-44af-a5a9-e05c8b1ae2df"
+                            }
+                        ]
+                    },
+                    "status": "Approved"
+                }
+            ]
+        }
+    }
+}

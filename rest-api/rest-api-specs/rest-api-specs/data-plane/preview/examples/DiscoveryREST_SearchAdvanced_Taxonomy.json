@@ -1,0 +1,189 @@
+{
+    "parameters": {
+        "searchRequest": {
+            "keywords": "test",
+            "filter": {
+                "and": [
+                    {
+                        "not": {
+                            "or": [
+                                {
+                                    "attributeName": "size",
+                                    "operator": "eq",
+                                    "attributeValue": 0
+                                },
+                                {
+                                    "attributeName": "fileSize",
+                                    "operator": "eq",
+                                    "attributeValue": 0
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "not": {
+                            "classification": "MICROSOFT.SYSTEM.TEMP_FILE"
+                        }
+                    },
+                    {
+                        "not": {
+                            "entityType": "AtlasGlossaryTerm",
+                            "includeSubTypes": false
+                        }
+                    }
+                ]
+            },
+            "limit": 2,
+            "offset": 0,
+            "facets": [
+                {
+                    "facet": "assetType",
+                    "count": 0
+                },
+                {
+                    "facet": "classification",
+                    "count": 10
+                },
+                {
+                    "facet": "terms",
+                    "count": 10
+                }
+            ],
+            "taxonomySetting": {
+                "assetTypes": [
+                    "Azure Blob Storage"
+                ],
+                "facet": {
+                    "count": 10,
+                    "sort": {
+                        "count": "desc"
+                    }
+                }
+            }
+        }
+    },
+    "responses": {
+        "200": {
+            "headers": {
+                "Access-Control-Allow-Headers": "authorization,content-type,x-xsrf-header,x-ms-client-request-id",
+                "Access-Control-Allow-Methods": "GET,OPTIONS,HEAD,PUT,POST,DELETE,PATCH",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "x-ms-request-id",
+                "Content-Type": "application/json; charset=UTF-8",
+                "Server": "Jetty(9.3.14.v20161028)",
+                "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+                "Transfer-Encoding": "chunked",
+                "X-Content-Type-Options": "nosniff",
+                "X-Frame-Options": "DENY",
+                "x-ms-request-id": "97930d08-0a53-4bb5-a352-08e7761bf20a",
+                "X-XSS-Protection": "1; mode=block"
+            },
+            "body": {
+                "@search.count": 20,
+                "@search.facets": {
+                    "classification": [],
+                    "assetType": [
+                        {
+                            "count": 20,
+                            "value": "Azure Blob Storage"
+                        },
+                        {
+                            "count": 2,
+                            "value": "Azure Data Lake Storage Gen2"
+                        },
+                        {
+                            "count": 2,
+                            "value": "Azure Files"
+                        }
+                    ],
+                    "Azure Blob Storage/Container": [
+                        {
+                            "count": 9,
+                            "value": "lineageoutput"
+                        },
+                        {
+                            "count": 5,
+                            "value": "adcresource"
+                        },
+                        {
+                            "count": 2,
+                            "value": "lineagefolderoutput"
+                        },
+                        {
+                            "count": 1,
+                            "value": "lineagescalabilitytestsource"
+                        }
+                    ],
+                    "Azure Storage Account": [
+                        {
+                            "count": 19,
+                            "value": "adctestaccount.core.windows.net"
+                        },
+                        {
+                            "count": 1,
+                            "value": "adctestgen2account.core.windows.net"
+                        }
+                    ],
+                    "Azure Blob Storage/Service": [
+                        {
+                            "count": 18,
+                            "value": "adctestaccount.blob.core.windows.net"
+                        }
+                    ],
+                    "term": []
+                },
+                "value": [
+                    {
+                        "@search.score": 1.2575366,
+                        "@search.highlights": {
+                            "qualifiedName": [
+                                "https://adctestaccount.blob.core.windows.net/lineageoutput/<em>test</em>{N}.csv"
+                            ],
+                            "name": [
+                                "<em>test</em>{N}.csv"
+                            ]
+                        },
+                        "id": "d27d5591-330f-41b3-b869-69a8cad76147",
+                        "qualifiedName": "https://adctestaccount.blob.core.windows.net/lineageoutput/test{N}.csv",
+                        "name": "test{N}.csv",
+                        "description": null,
+                        "owner": null,
+                        "entityType": "azure_blob_resource_set",
+                        "classification": [],
+                        "label": [],
+                        "assetType": [
+                            "Azure Blob Storage"
+                        ],
+                        "term": [],
+                        "contact": [],
+                        "@search.text": "<em>test</em>{N}.csv"
+                    },
+                    {
+                        "@search.score": 0.22644192,
+                        "@search.highlights": {
+                            "name": [
+                                "<em>adctestaccount</em>"
+                            ]
+                        },
+                        "id": "3adadba9-10a8-4909-8728-ee71d96bdb29",
+                        "qualifiedName": "https://adctestaccount.core.windows.net",
+                        "name": "adctestaccount",
+                        "description": null,
+                        "owner": null,
+                        "entityType": "azure_storage_account",
+                        "classification": [],
+                        "label": [],
+                        "assetType": [
+                            "Azure Blob Storage",
+                            "Azure Files",
+                            "Azure Data Lake Storage Gen2"
+                        ],
+                        "term": [],
+                        "contact": [],
+                        "@search.text": "<em>adctestaccount</em>"
+                    }
+                ]
+            }
+        }
+    }
+}
